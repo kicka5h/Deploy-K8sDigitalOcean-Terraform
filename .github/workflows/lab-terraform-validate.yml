@@ -13,9 +13,9 @@ jobs:
             PR-Validate:
               name: PR Validate
               runs-on: ubuntu-latest
-              defaults:
-                run:
-                  working-directory: './terraform/env/lab**'
+              # defaults:
+              #   run:
+              #     working-directory: './terraform/env/lab**'
           
               steps:
                 - name: Checkout
