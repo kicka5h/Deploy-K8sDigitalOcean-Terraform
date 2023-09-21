@@ -6,7 +6,7 @@ on:
     branches:
     - main
     paths:
-        - 'terraform/env/lab'
+        - './terraform/env/lab'
         - '.github/workflows/**'
 
 jobs:
@@ -15,7 +15,7 @@ jobs:
               runs-on: ubuntu-latest
               defaults:
                 run:
-                  working-directory: 'terraform/env/lab**'
+                  working-directory: './terraform/env/lab**'
           
               steps:
                 - name: Checkout
@@ -23,7 +23,7 @@ jobs:
 
                 - name: Git Config
                   id: git-config
-                  run: git config --global url."https://oauth2:${{ secrets.PAT }}@github.com"insteadOf https://github.com
+                  run: git config --global url."https://oauth2:${{ secrets.PAT }}@github.com".insteadOf https://github.com
           
                 - name: Install Terraform
                   id: install_terraform
